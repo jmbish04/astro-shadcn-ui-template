@@ -26,6 +26,7 @@ Open your browser and go to [http://localhost:4321](http://localhost:4321) to se
 ### Cloudflare Workers/Pages
 
 This template is pre-configured for Cloudflare deployment with:
+
 - `@astrojs/cloudflare` adapter for SSR support
 - `wrangler.jsonc` configuration file
 - Node.js compatibility enabled
@@ -33,11 +34,13 @@ This template is pre-configured for Cloudflare deployment with:
 #### Deploy to Cloudflare
 
 1. **Build and deploy:**
+
    ```bash
    npm run deploy  # or pnpm deploy
    ```
 
 2. **Test locally with Wrangler:**
+
    ```bash
    npm run cf:dev  # or pnpm cf:dev
    ```
