@@ -1,0 +1,14 @@
+{
+  "name": "astro-shadcn-ui-template",
+  "main": "./dist/_worker.js/index.js",
+  // Update to today's date
+  "compatibility_date": "2026-02-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+  },
+  "observability": {
+    "enabled": true,
+  },
+}
