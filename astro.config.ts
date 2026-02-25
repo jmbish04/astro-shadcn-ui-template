@@ -1,4 +1,5 @@
 // @ts-check
+import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
@@ -7,11 +8,15 @@ const site = process.env.VERCEL
   ? process.env.VERCEL_ENV === "production"
     ? "https://astro-shadcn-ui-template.vercel.app"
     : `https://${process.env.VERCEL_URL}`
-  : (process.env.SITE ?? "http://localhost:4321");
+  : process.env.CF_PAGES
+    ? process.env.CF_PAGES_URL
+    : (process.env.SITE ?? "http://localhost:4321");
 const base = process.env.BASE || "/";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
+  adapter: cloudflare(),
   site,
   base,
   integrations: [react()],
